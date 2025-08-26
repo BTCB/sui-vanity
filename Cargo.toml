@@ -5,11 +5,15 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[patch.crates-io]
+wasm-bindgen = { git = "https://github.com/rustwasm/wasm-bindgen", tag = "0.2.88" }
+
 [dependencies]
 clap = { version = "4.2.1", features = ["cargo", "string"] }
 num_cpus = "1.15"
-sui-sdk = { git = "https://github.com/MystenLabs/sui.git" }
-sui-keys = { git = "https://github.com/MystenLabs/sui.git" }
+sui-sdk = { git = "https://github.com/MystenLabs/sui.git", tag = "mainnet-v1.54.2" }
+sui-keys = { git = "https://github.com/MystenLabs/sui.git", tag = "mainnet-v1.54.2" }
+arbitrary = { version = "1.4", features = ["derive"] }
 
 [profile.release]
 lto = true
